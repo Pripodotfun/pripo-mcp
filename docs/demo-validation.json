@@ -1,0 +1,387 @@
+{
+  "validatedAt": "2026-10-07T17:55:18.395Z",
+  "chainId": 10143,
+  "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+  "writes": 0,
+  "tools": [
+    "get_protocol",
+    "list_markets",
+    "get_market",
+    "get_book",
+    "get_positions",
+    "get_health",
+    "quote_open",
+    "quote_close",
+    "get_operator_policy",
+    "prepare_open",
+    "prepare_close",
+    "prepare_create_market",
+    "open_position",
+    "close_position",
+    "create_market",
+    "get_transaction_status"
+  ],
+  "protocol": {
+    "chainId": 10143,
+    "factory": "0x133A614CBE2CBA1789E67E0898C0F5c56Eb7BBf0",
+    "vault": "0x1980B3a41393f610a8BE552C71BAE3F42AAB6735",
+    "owner": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "mode": "read-only",
+    "indexerConfigured": true,
+    "settlementSupported": false,
+    "creationEnabled": false,
+    "units": {
+      "pricesSizesMarginPnlFunding": "WAD: integer strings, 18 decimals",
+      "seedBondUsdc": "integer strings, 6 decimals",
+      "policyExpiry": "block number"
+    },
+    "writes": "Delegated owner is fixed in server configuration. Exact policy limits are checked by contract simulation. Request IDs persist across restarts."
+  },
+  "markets": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035083",
+      "blockHash": "0x244755c54528e402473d0a2c5251a14b461680efb9411eace046f3c2aa300335",
+      "timestamp": "1791395720"
+    },
+    "blockNumber": "69035083",
+    "total": "1",
+    "markets": [
+      "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb"
+    ],
+    "nextOffset": null
+  },
+  "marketState": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035085",
+      "blockHash": "0xe0e8b67316db178fb90f3b5561139ece5a4f3d3c721c2eb2ef77f0d4503e148a",
+      "timestamp": "1791395721"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "config": {
+      "priceSource": "0xB9CCec2Fa71E7C92Df27E7040129c62ac96D49a7",
+      "secondarySource": "0x0000000000000000000000000000000000000000",
+      "creator": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+      "takerFeeBps": 8,
+      "creatorShareBps": 3000,
+      "insuranceShareBps": 3000,
+      "referralShareBps": 1000,
+      "maxLeverageX": 2,
+      "mmrBps": 1500,
+      "liqPenaltyBps": 150,
+      "receiveCapX": 10,
+      "sideCapBps": 1715,
+      "impactMarginBps": 10000,
+      "maxOracleAgeBlocks": 10,
+      "degradeAfterBlocks": 100,
+      "degradedTwapBlocks": 600,
+      "fundingCapPerBlock": "416666666666",
+      "skewCoeff": "0",
+      "status": 0,
+      "statusSince": "68730216",
+      "adlPendingWindow": 1000,
+      "maxPositionsPerMarket": 128
+    },
+    "markPrice": "100100075050031268760",
+    "openInterest": {
+      "long": "100100075050031268760",
+      "short": "0",
+      "cap": "20000240120060030015000"
+    },
+    "index": {
+      "price": "0",
+      "updatedBlock": "0",
+      "external": false
+    },
+    "fundingState": {
+      "longIndex": "0",
+      "shortIndex": "0",
+      "longWeighted": "0",
+      "shortWeighted": "0",
+      "remainderHi": "0",
+      "roundingHi": "0",
+      "sweptHi": "0",
+      "lastBlock": "69035085"
+    },
+    "ledger": {
+      "protocolOwed": "8004002003",
+      "creatorOwed": "24012006003001500",
+      "insurance": "2000024012006003001500",
+      "clearing": "0",
+      "fundingPool": "0",
+      "skewPool": "0"
+    }
+  },
+  "positions": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035088",
+      "blockHash": "0xec71a38aa531c3d6c2468bbb575401f25583dbfac79ec735aa5fd865a8528c9d",
+      "timestamp": "1791395722"
+    },
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "freeBalanceWad": "49894947473736868433",
+    "positions": [
+      {
+        "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+        "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+        "size": "1000000000000000000",
+        "margin": "50025012506253126564",
+        "entryCost": "100050025012506253127",
+        "lastFundingIndex": "0",
+        "slot": 0,
+        "adlPending": false
+      }
+    ],
+    "marketsScanned": 1,
+    "nextOffset": null
+  },
+  "health": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035092",
+      "blockHash": "0xa267df9a4ce47b85ac5d0253bb2063be5ecadce6652e781783bef2b0e29daa78",
+      "timestamp": "1791395723"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "blockNumber": "69035092",
+    "healthWad": "499999999999999999",
+    "liquidatable": false,
+    "liquidation": {
+      "blockNumber": "69035092",
+      "price": "0",
+      "referenceKind": 2,
+      "reason": 7
+    },
+    "position": {
+      "size": "1000000000000000000",
+      "margin": "50025012506253126564",
+      "entryCost": "100050025012506253127",
+      "lastFundingIndex": "0",
+      "slot": 0,
+      "adlPending": false
+    },
+    "pendingAdl": {
+      "S0": "0",
+      "E0": "0",
+      "V0": "0",
+      "M0": "0",
+      "budget": "0",
+      "matchedSize": "0",
+      "reservedC": "0",
+      "allowanceFromC": "0",
+      "allowanceFromReserve": "0",
+      "consumedC": "0",
+      "replacedC": "0",
+      "addedMargin": "0",
+      "relief": "0",
+      "allowanceConsumed": "0",
+      "chunksMatched": "0",
+      "since": "0",
+      "cursor": 0,
+      "isLong": false,
+      "active": false
+    },
+    "healthDefinition": "equity / entry notional, WAD; a zero liquidation price requires interpreting referenceKind and reason"
+  },
+  "openQuote": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035094",
+      "blockHash": "0xf70f2d85c2730e1083813795021af9107a8786aaefb8128c460650767df4001d",
+      "timestamp": "1791395724"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "size": "100000000000000000",
+    "blockNumber": "69035094",
+    "avgFill": "100105082808050681000",
+    "fee": "8008406624644055",
+    "marginRequired": "5005254140402534050",
+    "newMark": "100110090816595783341",
+    "executableGuarantee": false
+  },
+  "closeQuote": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035097",
+      "blockHash": "0x5fbe79aae669c8ea711f5201b5572681000530bc1b2e8e812739bbe2625fe07f",
+      "timestamp": "1791395725"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "sizeFraction": "100000000000000000",
+    "blockNumber": "69035097",
+    "avgFill": "100095067793013109020",
+    "fee": "8007605423441049",
+    "pnl": "4504278050685590",
+    "fundingOwed": "0",
+    "executableGuarantee": false
+  },
+  "rpcBook": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69035100",
+      "blockHash": "0xefd222c61a18c514e2659118038cf2ff9b008cfd1e9d71e261cfb5b5e6f43b51",
+      "timestamp": "1791395725"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "blockNumber": "69035100",
+    "positions": [
+      {
+        "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+        "size": "1000000000000000000",
+        "margin": "50025012506253126564",
+        "entryCost": "100050025012506253127",
+        "lastFundingIndex": "0",
+        "slot": 0,
+        "adlPending": false
+      }
+    ]
+  },
+  "writeRejection": {
+    "code": "READ_ONLY",
+    "message": "Server is read-only. Configure a dedicated operator and start with --broadcast to enable submission."
+  },
+  "staleIndexerRejection": {
+    "code": "STALE_INDEXER",
+    "message": "Indexed snapshot exceeds the requested age; use source=rpc.",
+    "details": {
+      "ageSeconds": 70985,
+      "maxAgeSeconds": 60,
+      "asOf": {
+        "blockNumber": 68800711,
+        "blockHash": "0xacbedf07ff5985aefbfc3b254b661e79203945f26d8673323397d762b8846313",
+        "timestamp": 1791324741,
+        "ageSeconds": 70985
+      }
+    }
+  },
+  "historicalBook": {
+    "chainId": 10143,
+    "market": "0xea326a40694da4d7c5c64719b48ba561eca8c0eb",
+    "symbol": "PRIPO:DEMO",
+    "asOf": {
+      "blockNumber": 68800711,
+      "blockHash": "0xacbedf07ff5985aefbfc3b254b661e79203945f26d8673323397d762b8846313",
+      "timestamp": 1791324741,
+      "ageSeconds": 70986
+    },
+    "units": {
+      "amounts": "WAD (18 decimals)",
+      "healthWad": "equity / entry notional, WAD"
+    },
+    "snapshotPolicy": "end of last indexed event block",
+    "book": {
+      "oiCap": "20000240120060030015000",
+      "config": {
+        "mmrBps": 1500,
+        "status": 0,
+        "creator": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+        "skewCoeff": "0",
+        "sideCapBps": 1715,
+        "priceSource": "0xB9CCec2Fa71E7C92Df27E7040129c62ac96D49a7",
+        "receiveCapX": 10,
+        "statusSince": "68730216",
+        "takerFeeBps": 8,
+        "maxLeverageX": 2,
+        "liqPenaltyBps": 150,
+        "creatorShareBps": 3000,
+        "impactMarginBps": 10000,
+        "secondarySource": "0x0000000000000000000000000000000000000000",
+        "adlPendingWindow": 1000,
+        "referralShareBps": 1000,
+        "insuranceShareBps": 3000,
+        "degradeAfterBlocks": 100,
+        "degradedTwapBlocks": 600,
+        "fundingCapPerBlock": "416666666666",
+        "maxOracleAgeBlocks": 10,
+        "maxPositionsPerMarket": 128
+      },
+      "ledger": {
+        "clearing": "0",
+        "skewPool": "0",
+        "insurance": "2000024012006003001500",
+        "creatorOwed": "24012006003001500",
+        "fundingPool": "0",
+        "protocolOwed": "8004002003"
+      },
+      "market": "0xea326a40694da4d7c5c64719b48ba561eca8c0eb",
+      "oiLong": "100100075050031268760",
+      "chainId": 10143,
+      "funding": {
+        "sweptHi": "0",
+        "lastBlock": "68800711",
+        "longIndex": "0",
+        "roundingHi": "0",
+        "shortIndex": "0",
+        "remainderHi": "0",
+        "longWeighted": "0",
+        "shortWeighted": "0"
+      },
+      "oiShort": "0",
+      "blockHash": "0xacbedf07ff5985aefbfc3b254b661e79203945f26d8673323397d762b8846313",
+      "markPrice": "100100075050031268760",
+      "positions": [
+        {
+          "size": "1000000000000000000",
+          "slot": 0,
+          "user": "0x3b2f1773a1b279a1b0b13ad425019c91433693c3",
+          "margin": "50025012506253126564",
+          "entryCost": "100050025012506253127",
+          "healthWad": "499999999999999999",
+          "adlPending": false,
+          "pendingAdl": {
+            "E0": "0",
+            "M0": "0",
+            "S0": "0",
+            "V0": "0",
+            "since": "0",
+            "active": false,
+            "budget": "0",
+            "cursor": 0,
+            "isLong": false,
+            "relief": "0",
+            "consumedC": "0",
+            "replacedC": "0",
+            "reservedC": "0",
+            "addedMargin": "0",
+            "matchedSize": "0",
+            "chunksMatched": "0",
+            "allowanceFromC": "0",
+            "allowanceConsumed": "0",
+            "allowanceFromReserve": "0"
+          },
+          "blockNumber": "68800711",
+          "liquidation": {
+            "price": "0",
+            "reason": 7,
+            "blockNumber": "68800711",
+            "referenceKind": 2
+          },
+          "liquidatable": false,
+          "lastFundingIndex": "0"
+        }
+      ],
+      "twapPrice": "100100075050031268760",
+      "indexPrice": {
+        "price": "0",
+        "external": false,
+        "updatedBlock": "0"
+      },
+      "blockNumber": 68800711,
+      "fundingBinding": "0x0000000000000000000000000000000000000000"
+    },
+    "source": "indexer",
+    "executionQuote": false
+  }
+}
