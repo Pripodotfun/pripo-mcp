@@ -1,0 +1,104 @@
+{
+  "verifiedAt": "2026-10-07T23:22:09.664Z",
+  "chainId": 10143,
+  "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+  "owner": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+  "operator": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+  "requestId": "pripo-mcp-smoke-open-20261007-01",
+  "journal": {
+    "requestId": "pripo-mcp-smoke-open-20261007-01",
+    "transactionHash": "0xcf930a18ca9dccee77755d8f4b5318b1618a7dc71ad38d5fcfc0105ba3000468",
+    "nonce": 0,
+    "status": "confirmed",
+    "createdBlock": "69099422",
+    "receiptBlock": "69099429",
+    "receiptBlockHash": "0x7098f36da539a49ba6601e364f4245c6bf8d5386e4e1d06f728c445537362bf1",
+    "retry": "Reuse the same request_id and arguments; do not create a new ID to retry this transaction."
+  },
+  "transaction": {
+    "hash": "0xcf930a18ca9dccee77755d8f4b5318b1618a7dc71ad38d5fcfc0105ba3000468",
+    "from": "0xf996d91542dba81193154b14bec45ab0c10ae9c0",
+    "to": "0xea326a40694da4d7c5c64719b48ba561eca8c0eb",
+    "nonce": 0,
+    "functionName": "openFor",
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "size": "10000000000000000",
+    "limitPrice": "100601078682303347565",
+    "oracleUpdate": "0x",
+    "marketProof": [],
+    "value": "0"
+  },
+  "receipt": {
+    "status": "success",
+    "blockNumber": "69099429",
+    "blockHash": "0x7098f36da539a49ba6601e364f4245c6bf8d5386e4e1d06f728c445537362bf1",
+    "gasUsed": "457265",
+    "effectiveGasPrice": "102000000000",
+    "gasCostWei": "46641030000000000"
+  },
+  "snapshot": {
+    "blockNumber": "69099465",
+    "blockHash": "0x7212d99aa3e850d8f10229b77a6dd68b37c66f2d9491a85150b131b370803e6f",
+    "timestamp": "1791415165"
+  },
+  "before": {
+    "blockNumber": "69099428",
+    "position": {
+      "size": "1000000000000000000",
+      "margin": "50025012506253126564",
+      "entryCost": "100050025012506253127",
+      "lastFundingIndex": "0",
+      "slot": 0,
+      "adlPending": false
+    },
+    "freeBalanceWad": "49894947473736868433",
+    "policy": {
+      "expiry": "69164908",
+      "maxNotionalPerTx": "150000000000000000000",
+      "maxTotalNotional": "500000000000000000000",
+      "usedNotional": "0",
+      "marketsRoot": "0x2e2ca2098fc94a4a2398660470baf0c42e6723612846c6ed2537fed051e6fe5d",
+      "canClose": true
+    },
+    "health": {
+      "blockNumber": "69099428",
+      "healthWad": "499999999999999999",
+      "liquidatable": false
+    },
+    "remainingPolicyWad": "500000000000000000000"
+  },
+  "after": {
+    "blockNumber": "69099465",
+    "position": {
+      "size": "1010000000000000000",
+      "margin": "50525515385269561129",
+      "entryCost": "101051030770539122257",
+      "lastFundingIndex": "0",
+      "slot": 0,
+      "adlPending": false
+    },
+    "freeBalanceWad": "49393643790114007572",
+    "policy": {
+      "expiry": "69164908",
+      "maxNotionalPerTx": "150000000000000000000",
+      "maxTotalNotional": "500000000000000000000",
+      "usedNotional": "1001005758032869130",
+      "marketsRoot": "0x2e2ca2098fc94a4a2398660470baf0c42e6723612846c6ed2537fed051e6fe5d",
+      "canClose": true
+    },
+    "health": {
+      "blockNumber": "69099465",
+      "healthWad": "499991197842912236",
+      "liquidatable": false
+    },
+    "remainingPolicyWad": "498998994241967130870"
+  },
+  "verificationHead": {
+    "blockNumber": "69100006",
+    "blockHash": "0x1d8cfe17f04a62c9b0c89e677bcc21746ce1201c24eae55a5d3630fe21d56392",
+    "timestamp": "1791415328",
+    "policyExpiry": "69164908",
+    "policyExpired": false
+  },
+  "verificationTransactionsSent": 0
+}

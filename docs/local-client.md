@@ -26,7 +26,9 @@ Confirmed setup transactions:
 - [Fund operator gas](https://testnet.monadvision.com/tx/0xd7672b92344acd68152dc8b7820680c3e2d5c851569d2d459da5f8c9b6433926)
 - [Grant operator policy](https://testnet.monadvision.com/tx/0x7e40b5dbbc100394b8aec8752d7b1b802723e649c40e0d1cb5595b2422fb6665)
 
-`operator-setup.json` records canonical receipts and policy reads. `operator-verification.json` records an MCP handshake, all 16 discovered tools, successful delegated open/close simulations, invalid-proof rejection, and unchanged position state. Only gas funding and policy setup were broadcast; no position was opened or closed.
+`operator-setup.json` records canonical receipts and policy reads. `operator-verification.json` records the initial MCP handshake, all 16 discovered tools, successful delegated open/close simulations, invalid-proof rejection, and unchanged position state during those simulations. That initial setup broadcast only gas funding and the policy grant.
+
+The subsequent [MCP smoke trade](https://testnet.monadvision.com/tx/0xcf930a18ca9dccee77755d8f4b5318b1618a7dc71ad38d5fcfc0105ba3000468) added 0.01 to the owner's long and confirmed in block `69099429`. The position remained open at 1.01 base units, with 498.998994241967130870 mUSDC of cumulative policy allowance remaining at snapshot block `69099465`. See [trade validation](mcp-trade-validation.json) for the receipt, journal match and exact historical account state. The request ID `pripo-mcp-smoke-open-20261007-01` is now used; retain it for status/recovery of this trade, not a new trade.
 
 The installed Codex CLI 0.157.1 app-server also loaded `pripo` and discovered all 16 tools through `mcpServerStatus/list`. That check started no model turn and submitted no transactions; its result is saved in `codex-connection.json`.
 

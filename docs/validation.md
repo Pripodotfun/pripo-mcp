@@ -14,4 +14,21 @@ The testnet validation forwarded only RPC, public owner address and indexer URL 
 
 Subsequent [local client setup](local-client.md) funded a dedicated testnet operator and granted a demo-market-only policy. The broadcast-capable MCP server then passed unsigned delegated open/close simulations and invalid-proof rejection. Codex itself discovered all 16 tools. These later checks sent no position trades; the owner-signed funding and policy receipts are recorded separately in `operator-setup.json`.
 
-Not yet validated here: Pyth-fed MCP trading against a live oracle, testnet operator broadcasting, hosted multi-user transport, load/soak behavior, or production signer recovery after filesystem loss. Pyth preparation is delegated to the existing pinned SDK; the local MCP contract test uses NullAdapter. The recorded indexer data is a bounded historical demo, not a running continuous index.
+## Confirmed MCP testnet trade
+
+The operator submitted `openFor` through MCP with request ID `pripo-mcp-smoke-open-20261007-01`. Transaction `0xcf930a18ca9dccee77755d8f4b5318b1618a7dc71ad38d5fcfc0105ba3000468` succeeded in canonical block `69099429` on chain 10143. It added `0.01` base units to the existing long with a maximum buy price of `100.601078682303347565`, empty oracle payload, and an empty proof for the single-market allowlist.
+
+Independent RPC verification matched the transaction sender, target, decoded arguments, canonical receipt and local journal fingerprint. Historical reads at block `69099465` confirmed:
+
+| Value | Exact amount |
+| --- | --- |
+| Long size | 1.01 |
+| Position margin | 50.525515385269561129 |
+| Entry notional | 101.051030770539122257 |
+| Free collateral | 49.393643790114007572 |
+| Policy notional used | 1.001005758032869130 |
+| Policy notional remaining | 498.998994241967130870 |
+
+The before/after change in entry notional exactly matched consumed operator allowance. The position was not liquidatable, and the policy was still active at verification head `69100006`. Exact account state, receipt, gas cost and block provenance are recorded in [mcp-trade-validation.json](mcp-trade-validation.json). Verification sent no transactions and left the position open.
+
+Not yet validated here: Pyth-fed MCP trading against a live oracle, a testnet close through MCP, hosted multi-user transport, load/soak behavior, or production signer recovery after filesystem loss. Pyth preparation is delegated to the existing pinned SDK; the local MCP contract test uses NullAdapter. The recorded indexer data is a bounded historical demo, not a running continuous index.
