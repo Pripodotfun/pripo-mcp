@@ -1,0 +1,194 @@
+{
+  "verifiedAt": "2026-10-07T20:29:12.523Z",
+  "positionTradesSent": 0,
+  "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+  "tools": [
+    "get_protocol",
+    "list_markets",
+    "get_market",
+    "get_book",
+    "get_positions",
+    "get_health",
+    "quote_open",
+    "quote_close",
+    "get_operator_policy",
+    "prepare_open",
+    "prepare_close",
+    "prepare_create_market",
+    "open_position",
+    "close_position",
+    "create_market",
+    "get_transaction_status"
+  ],
+  "protocol": {
+    "chainId": 10143,
+    "factory": "0x133A614CBE2CBA1789E67E0898C0F5c56Eb7BBf0",
+    "vault": "0x1980B3a41393f610a8BE552C71BAE3F42AAB6735",
+    "owner": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "operator": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+    "mode": "broadcast",
+    "indexerConfigured": true,
+    "settlementSupported": false,
+    "creationEnabled": false,
+    "units": {
+      "pricesSizesMarginPnlFunding": "WAD: integer strings, 18 decimals",
+      "seedBondUsdc": "integer strings, 6 decimals",
+      "policyExpiry": "block number"
+    },
+    "writes": "Delegated owner is fixed in server configuration. Exact policy limits are checked by contract simulation. Request IDs persist across restarts."
+  },
+  "policy": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69065656",
+      "blockHash": "0x82a17c3ba56ebe03271a301c05f4a58903ef61ce8f29b502eb64e0002ce0b1b0",
+      "timestamp": "1791404953"
+    },
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "operator": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+    "policy": {
+      "expiry": "69164908",
+      "maxNotionalPerTx": "150000000000000000000",
+      "maxTotalNotional": "500000000000000000000",
+      "usedNotional": "0",
+      "marketsRoot": "0x2e2ca2098fc94a4a2398660470baf0c42e6723612846c6ed2537fed051e6fe5d",
+      "canClose": true
+    },
+    "expired": false
+  },
+  "positionsBefore": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69065659",
+      "blockHash": "0xc7c772f2eb867edbf5682bbe7c5da1d8b894dca87ba7661da115cad6e3c0143e",
+      "timestamp": "1791404954"
+    },
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "freeBalanceWad": "49894947473736868433",
+    "positions": [
+      {
+        "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+        "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+        "size": "1000000000000000000",
+        "margin": "50025012506253126564",
+        "entryCost": "100050025012506253127",
+        "lastFundingIndex": "0",
+        "slot": 0,
+        "adlPending": false
+      }
+    ],
+    "marketsScanned": 1,
+    "nextOffset": null
+  },
+  "openQuote": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69065663",
+      "blockHash": "0x2cf973d78b040344f78dff1f005e91bb8044bdaeeb54cd848144994ce4e0d036",
+      "timestamp": "1791404956"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "size": "100000000000000000",
+    "blockNumber": "69065663",
+    "avgFill": "100105082808050681000",
+    "fee": "8008406624644055",
+    "marginRequired": "5005254140402534050",
+    "newMark": "100110090816595783341",
+    "executableGuarantee": false
+  },
+  "closeQuote": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69065666",
+      "blockHash": "0xb8d823d196ab8175b61e87f4fdebe41a86ecf4be847db1e0ce62410a21bd616e",
+      "timestamp": "1791404956"
+    },
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "sizeFraction": "100000000000000000",
+    "blockNumber": "69065666",
+    "avgFill": "100095067793013109020",
+    "fee": "8007605423441049",
+    "pnl": "4504278050685590",
+    "fundingOwed": "0",
+    "executableGuarantee": false
+  },
+  "preparedOpen": {
+    "blockNumber": "69065671",
+    "functionName": "openFor",
+    "request": {
+      "account": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+      "chainId": 10143,
+      "to": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+      "data": "0xd70115cc0000000000000000000000003b2f1773a1b279a1b0b13ad425019c91433693c3000000000000000000000000000000000000000000000000016345785d8a00000000000000000000000000000000000000000000000000057b2124dbdac5ec6200000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "value": "0",
+      "gas": "457277"
+    },
+    "quote": {
+      "blockNumber": "69065671",
+      "avgFill": "100105082808050681000",
+      "fee": "8008406624644055",
+      "marginRequired": "5005254140402534050",
+      "newMark": "100110090816595783341"
+    }
+  },
+  "preparedClose": {
+    "blockNumber": "69065679",
+    "functionName": "closeFor",
+    "request": {
+      "account": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+      "chainId": 10143,
+      "to": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+      "data": "0x9671ab640000000000000000000000003b2f1773a1b279a1b0b13ad425019c91433693c3000000000000000000000000000000000000000000000000016345785d8a00000000000000000000000000000000000000000000000000055f35067e377a328900000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "value": "0",
+      "gas": "426559"
+    },
+    "quote": {
+      "blockNumber": "69065679",
+      "avgFill": "100095067793013109020",
+      "fee": "8007605423441049",
+      "pnl": "4504278050685590",
+      "fundingOwed": "0"
+    }
+  },
+  "badProofRejection": {
+    "code": "POLICY_VIOLATION",
+    "message": "Market proof does not match the operator policy allowlist.",
+    "details": {
+      "errorName": "PolicyViolation",
+      "args": [
+        3
+      ]
+    }
+  },
+  "positionsAfter": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69065690",
+      "blockHash": "0x527fe443074b2eb6b1ffe365d942b60ad306b1235546474f3e59a986c6fd37e3",
+      "timestamp": "1791404964"
+    },
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "freeBalanceWad": "49894947473736868433",
+    "positions": [
+      {
+        "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+        "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+        "size": "1000000000000000000",
+        "margin": "50025012506253126564",
+        "entryCost": "100050025012506253127",
+        "lastFundingIndex": "0",
+        "slot": 0,
+        "adlPending": false
+      }
+    ],
+    "marketsScanned": 1,
+    "nextOffset": null
+  }
+}

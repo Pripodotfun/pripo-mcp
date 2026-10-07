@@ -1,0 +1,59 @@
+{
+  "completedAt": "2026-10-07T20:28:13.604Z",
+  "plan": {
+    "chainId": 10143,
+    "owner": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "operator": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+    "vault": "0x1980B3a41393f610a8BE552C71BAE3F42AAB6735",
+    "market": "0xeA326A40694dA4D7C5c64719B48Ba561EcA8C0Eb",
+    "preparedBlock": "69064908",
+    "expiry": "69164908",
+    "maxNotionalPerTx": "150000000000000000000",
+    "maxTotalNotional": "500000000000000000000",
+    "marketsRoot": "0x2e2ca2098fc94a4a2398660470baf0c42e6723612846c6ed2537fed051e6fe5d",
+    "canClose": true,
+    "fundingWei": "100000000000000000"
+  },
+  "funding": {
+    "requestId": "fund-operator-gas",
+    "transactionHash": "0xd7672b92344acd68152dc8b7820680c3e2d5c851569d2d459da5f8c9b6433926",
+    "nonce": 38,
+    "status": "confirmed",
+    "createdBlock": "69065431",
+    "receiptBlock": "69065435",
+    "receiptBlockHash": "0x2bc1165efe0fc969f754d1bf9cb54d3df4b255b2d2fdbb6178bc8ac82640730e",
+    "retry": "Reuse the same request_id and arguments; do not create a new ID to retry this transaction."
+  },
+  "grant": {
+    "requestId": "grant-operator-policy",
+    "transactionHash": "0x7e40b5dbbc100394b8aec8752d7b1b802723e649c40e0d1cb5595b2422fb6665",
+    "nonce": 39,
+    "status": "confirmed",
+    "createdBlock": "69065442",
+    "receiptBlock": "69065448",
+    "receiptBlockHash": "0x897c7b56f4572e51ffaf43288ee1fc2b93d5c3317c17f7faf9f36ce10545a988",
+    "retry": "Reuse the same request_id and arguments; do not create a new ID to retry this transaction."
+  },
+  "policy": {
+    "chainId": 10143,
+    "source": "rpc",
+    "asOf": {
+      "blockNumber": "69065455",
+      "blockHash": "0x28fa17ba0992f455533d66d45bb6c33d38cbf6df25bd37ae9ec6857a0519e629",
+      "timestamp": "1791404893"
+    },
+    "user": "0x3b2F1773a1B279A1b0b13aD425019C91433693c3",
+    "operator": "0xF996d91542dBa81193154b14bec45AB0c10ae9C0",
+    "policy": {
+      "expiry": "69164908",
+      "maxNotionalPerTx": "150000000000000000000",
+      "maxTotalNotional": "500000000000000000000",
+      "usedNotional": "0",
+      "marketsRoot": "0x2e2ca2098fc94a4a2398660470baf0c42e6723612846c6ed2537fed051e6fe5d",
+      "canClose": true
+    },
+    "expired": false
+  },
+  "operatorBalanceWei": "100000000000000000",
+  "positionTradesSent": 0
+}
