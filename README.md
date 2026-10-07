@@ -37,6 +37,8 @@ For an MCP host that accepts `mcpServers`, use absolute paths and a Node binary 
 
 Do not launch through `npm start` from an MCP host: npm can print extra text on stdout. The server uses the official SDK's [`serveStdio`](https://ts.sdk.modelcontextprotocol.io/v2/serving/stdio) entry point for modern and legacy MCP clients.
 
+The configured local Codex connection, testnet operator policy and setup receipts are documented in [local client setup](docs/local-client.md).
+
 ## Tools
 
 All amounts are **decimal integer strings**, never JavaScript numbers. Prices, signed position sizes, collateral balances and fractions use WAD (18 decimals). Seed bonds use raw six-decimal token units. Pagination counts and age limits are small JSON numbers. Tool results contain `{ "ok": true, "result": ... }` in both text and `structuredContent`; operational errors contain `{ "ok": false, "error": { "code", "message", "details" } }` and `isError: true`.
@@ -109,4 +111,4 @@ The local integration test starts an isolated Anvil node and uses its public tes
 
 ## Remaining work
 
-This milestone provides local stdio access. Hosted HTTP authentication, x402 metering, a reference trading agent and live Pyth-market MCP validation are separate follow-ups. `propose_settlement` is unavailable because the pinned contracts/SDK do not implement a Resolver; `get_protocol` reports `settlementSupported: false`. No testnet write was performed during MCP validation.
+This milestone provides local stdio access. Hosted HTTP authentication, x402 metering, a reference trading agent and live Pyth-market MCP validation are separate follow-ups. `propose_settlement` is unavailable because the pinned contracts/SDK do not implement a Resolver; `get_protocol` reports `settlementSupported: false`. Initial MCP validation was read-only; subsequent local-client setup funded a dedicated testnet operator and granted its restricted policy. No testnet position trades have been sent through MCP.

@@ -12,4 +12,6 @@ Automated tests separately cover concurrent duplicate IDs, lost RPC submission r
 
 The testnet validation forwarded only RPC, public owner address and indexer URL to the MCP process. No private key was loaded and no onchain write was made. It read live market/position/health/book data, requested open/close quotes, verified that a write tool returns `READ_ONLY`, rejected the bounded indexer's old book at the default 60-second age, and retrieved it with an explicit historical age allowance after checking its canonical block.
 
+Subsequent [local client setup](local-client.md) funded a dedicated testnet operator and granted a demo-market-only policy. The broadcast-capable MCP server then passed unsigned delegated open/close simulations and invalid-proof rejection. Codex itself discovered all 16 tools. These later checks sent no position trades; the owner-signed funding and policy receipts are recorded separately in `operator-setup.json`.
+
 Not yet validated here: Pyth-fed MCP trading against a live oracle, testnet operator broadcasting, hosted multi-user transport, load/soak behavior, or production signer recovery after filesystem loss. Pyth preparation is delegated to the existing pinned SDK; the local MCP contract test uses NullAdapter. The recorded indexer data is a bounded historical demo, not a running continuous index.

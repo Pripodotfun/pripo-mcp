@@ -1,0 +1,27 @@
+{
+  "verifiedAt": "2026-10-07T20:31:32.432Z",
+  "client": "Codex CLI 0.157.1 app-server",
+  "server": "pripo",
+  "transport": "stdio",
+  "tools": [
+    "prepare_open",
+    "close_position",
+    "quote_close",
+    "prepare_close",
+    "get_positions",
+    "get_protocol",
+    "open_position",
+    "get_transaction_status",
+    "get_health",
+    "quote_open",
+    "get_market",
+    "get_operator_policy",
+    "create_market",
+    "prepare_create_market",
+    "get_book",
+    "list_markets"
+  ],
+  "toolCount": 16,
+  "modelTurnsStarted": 0,
+  "positionTradesSent": 0
+}
