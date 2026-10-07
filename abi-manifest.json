@@ -1,0 +1,21 @@
+{
+  "repository": "pripo-contract",
+  "commit": "7c868c5c1ae34f6b00c204bdf1cdf3c6608148bf",
+  "sha256": {
+    "abi/Market.json": "087d74edac6dcbd8147b9f4d09e9e615d75f4ef79488ad309dd1a559e883fcd4",
+    "abi/IMarketCore.json": "a95c1a18a7a13ef63cd2d05bd31788aa5b3d01feffba5e90abf8521b3e84672f",
+    "abi/IMarket.json": "1e1df8f33b0fc35f47e507f23b912412273dc6bcccf4c58082da44871ab9c548",
+    "abi/MarketFactory.json": "1e1ed1559dcfcfce5f8f4e05851fe589eadc08ddd4ee676b0b271e454804c5a6",
+    "abi/IMarketFactory.json": "515a584fe2aeb955c6929488c733c91b000a08709f9118be340c588a804008ed",
+    "abi/FeeSweeper.json": "60f13d5e14d0c6d4395e207a19aeb8197e09a1210ab78dd35fcefb194fdf239e",
+    "abi/PythAdapter.json": "a204f4160ad9c9fee26aa09bdfb06219ee0b8bb12ebbd062e1d06c87eea202eb",
+    "abi/NullAdapter.json": "faa6d070ae853b7f8e009d4981d50fb5b67aa813727ca033f3d669ab150573c4",
+    "abi/MarginVault.json": "83c16d2c3c71ba2c8300bfac484e788744e944eda8853aaa6cb51aa8fa8a473f",
+    "abi/IMarginVault.json": "204dab7b95d22a63a14112175e8ee61ea2f293519dc49826964942f484470294",
+    "abi/InsuranceBackstop.json": "80ab2dab6857dcbceaeecbf6468f4ebd064cb060ba45cfe5ca73c587f80feb4e",
+    "abi/IInsuranceBackstop.json": "a7b15f98ecd955266d315f0fc365e9e47601dfb321c860d87a04a36de89062b2",
+    "abi/IResolver.json": "2f2c4c0ec61a76e03569b6b280dd7483c835b7c527bae33877f7ad146f21c828",
+    "abi/IPriceSource.json": "5dd483a29b57670736f00565d1c8e936377d193e7d1b0447ce19699051ad0a95",
+    "abi/IPripoErrors.json": "f2a78a880e0155785c091eba1d29fac5d7d6a90967849cd67be3491ddf1dbbd6"
+  }
+}

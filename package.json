@@ -1,0 +1,30 @@
+{
+  "name": "@pripo/mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.15.0" },
+  "bin": { "pripo-mcp": "dist/cli.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test --test-timeout=30000 test/*.test.ts",
+    "check": "node scripts/check-vendor.mjs && npm run typecheck && npm test && npm run build",
+    "start": "node dist/cli.js",
+    "test:integration": "node --import tsx --test test/local.e2e.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "@pripo/sdk": "file:vendor/pripo-sdk-0.1.0.tgz",
+    "proper-lockfile": "4.1.2",
+    "viem": "2.57.3",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "@types/node": "22.20.5",
+    "@types/proper-lockfile": "4.1.4",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

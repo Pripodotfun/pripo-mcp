@@ -1,0 +1,13 @@
+{
+  "chainId": 10143,
+  "chainName": "Monad Testnet",
+  "nativeSymbol": "MON",
+  "factory": "0x133A614CBE2CBA1789E67E0898C0F5c56Eb7BBf0",
+  "vault": "0x1980B3a41393f610a8BE552C71BAE3F42AAB6735",
+  "pythAdapters": ["0xA8e7c178fb8d1672436A35D0BaC7e5243b7FB771"],
+  "confirmations": 3,
+  "maxGas": "3000000",
+  "maxFeePerGas": "500000000000",
+  "maxNativeValue": "10000000000000000",
+  "maxCreationSeedBondUsdc": "0"
+}
