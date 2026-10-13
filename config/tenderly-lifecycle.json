@@ -1,0 +1,13 @@
+{
+  "chainId": 999143,
+  "chainName": "Pripo Tenderly",
+  "nativeSymbol": "MON",
+  "factory": "0x4aB56f1551cA5C363a46AFD6a1e078bD60Ab11A6",
+  "vault": "0x73e4Ea4161a844B8b857D9ffa8f8498324905121",
+  "pythAdapters": ["0x5F57CB43D1506A17f3A1164da94aA11D8D04F503"],
+  "confirmations": 1,
+  "maxGas": "150010000",
+  "maxFeePerGas": "200000000000",
+  "maxNativeValue": "10000000000000000",
+  "maxCreationSeedBondUsdc": "0"
+}

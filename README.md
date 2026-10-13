@@ -95,6 +95,8 @@ Cancellation before signing prevents submission. Once an intent is signed and pe
 
 Market creation has a separate authorization model: the **operator** pays the seed bond and owns the created market. The owner's vault trading policy does not cover creation. It is disabled until `maxCreationSeedBondUsdc` in the deployment JSON is explicitly set above zero. This is a per-creation cap, not a lifetime budget; operator token balance and allowance should reflect the intended total budget. Token approvals are performed outside MCP. `--config /path/deployment.json` selects a custom deployment and transaction limits.
 
+`config/tenderly-lifecycle.json` targets the Pripo Tenderly fork (chain 999143); pass `--config config/tenderly-lifecycle.json` and point `PRIPO_MCP_RPC_URL` at the private fork RPC. Tenderly's `eth_estimateGas` returns the 150M block gas limit, so `maxGas` is 150,010,000 and each submission needs roughly 30 MON of fork balance at the 200 gwei fee cap. Creation stays disabled.
+
 ## Validate
 
 ```sh
