@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { serveStdio, type StdioServerHandle } from '@modelcontextprotocol/server/stdio';
 import { loadConfig } from './config.js';
-import { json, publicError } from './errors.js';
+import { json, publicError, ToolError } from './errors.js';
+import { createPrivyServerWallet } from './privy.js';
 import { PripoService } from './service.js';
 import { FileStore } from './store.js';
 import { Transactions } from './transactions.js';
@@ -21,6 +22,14 @@ function stop() {
 }
 const report = (error: unknown) => console.error(JSON.stringify(json(publicError(error))));
 try {
+  if (process.argv[2] === 'privy-wallet') {
+    // Creates a Privy server wallet for use as an operator. Prints only its ID and public address.
+    if (process.argv.length !== 3 || !process.env.PRIVY_APP_ID || !process.env.PRIVY_APP_SECRET)
+      throw new ToolError('CONFIGURATION', 'Usage: PRIVY_APP_ID=… PRIVY_APP_SECRET=… pripo-mcp privy-wallet');
+    const wallet = await createPrivyServerWallet({ appId: process.env.PRIVY_APP_ID, appSecret: process.env.PRIVY_APP_SECRET });
+    console.log(JSON.stringify({ PRIPO_MCP_PRIVY_WALLET_ID: wallet.id, PRIPO_MCP_OPERATOR_ADDRESS: wallet.address }, null, 2));
+    process.exit(0);
+  }
   const { config, chain, account } = await loadConfig(process.argv.slice(2));
   let service = PripoService.connect(config, chain);
   await service.verifyDeployment();

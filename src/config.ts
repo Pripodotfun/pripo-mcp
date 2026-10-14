@@ -4,6 +4,7 @@ import { defineChain, getAddress, isAddress, type Address } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { z } from 'zod';
 import { ToolError } from './errors.js';
+import { privyAccount } from './privy.js';
 
 export const addressSchema = z.string().refine(value => isAddress(value, { strict: false }), 'Expected an EVM address').transform(value => getAddress(value));
 export const uintSchema = z.string().max(78).regex(/^(0|[1-9][0-9]*)$/).refine(value => /^(0|[1-9][0-9]*)$/.test(value) && value.length <= 78 && BigInt(value) < 2n ** 256n, 'Expected uint256');
@@ -48,10 +49,18 @@ export async function loadConfig(args: string[], env: NodeJS.ProcessEnv = proces
   // A key present in the environment is deliberately ignored in read-only mode.
   let account;
   if (broadcast) {
-    const key = env.PRIPO_MCP_OPERATOR_PRIVATE_KEY;
-    if (!key || !/^0x[0-9a-fA-F]{64}$/.test(key) || !owner) throw new ToolError('CONFIGURATION', 'Broadcast mode requires an owner and a dedicated operator key.');
-    account = privateKeyToAccount(key as `0x${string}`);
-    if (operator && operator !== account.address) throw new ToolError('CONFIGURATION', 'Configured operator address does not match the key.');
+    const key = env.PRIPO_MCP_OPERATOR_PRIVATE_KEY, walletId = env.PRIPO_MCP_PRIVY_WALLET_ID;
+    if (!owner) throw new ToolError('CONFIGURATION', 'Broadcast mode requires an owner and a dedicated operator key.');
+    if (walletId) {
+      // A Privy server wallet signs instead of a local key; its address must be pinned explicitly.
+      if (key) throw new ToolError('CONFIGURATION', 'Set either PRIPO_MCP_PRIVY_WALLET_ID or PRIPO_MCP_OPERATOR_PRIVATE_KEY, not both.');
+      if (!env.PRIVY_APP_ID || !env.PRIVY_APP_SECRET || !operator) throw new ToolError('CONFIGURATION', 'A Privy operator wallet requires PRIVY_APP_ID, PRIVY_APP_SECRET and PRIPO_MCP_OPERATOR_ADDRESS.');
+      account = privyAccount({ appId: env.PRIVY_APP_ID, appSecret: env.PRIVY_APP_SECRET }, walletId, operator);
+    } else {
+      if (!key || !/^0x[0-9a-fA-F]{64}$/.test(key)) throw new ToolError('CONFIGURATION', 'Broadcast mode requires an owner and a dedicated operator key.');
+      account = privateKeyToAccount(key as `0x${string}`);
+      if (operator && operator !== account.address) throw new ToolError('CONFIGURATION', 'Configured operator address does not match the key.');
+    }
     operator = account.address;
     if (operator === owner) throw new ToolError('CONFIGURATION', 'Use a delegated operator distinct from the position owner.');
   }

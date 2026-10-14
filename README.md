@@ -97,6 +97,22 @@ Market creation has a separate authorization model: the **operator** pays the se
 
 `config/tenderly-lifecycle.json` targets the Pripo Tenderly fork (chain 999143); pass `--config config/tenderly-lifecycle.json` and point `PRIPO_MCP_RPC_URL` at the private fork RPC. Tenderly's `eth_estimateGas` returns the 150M block gas limit, so `maxGas` is 150,010,000 and each submission needs roughly 30 MON of fork balance at the 200 gwei fee cap. Creation stays disabled.
 
+## Privy server wallet as the operator
+
+Instead of a raw key in `.env`, the operator key can live in a [Privy server wallet](https://docs.privy.io/wallets/overview). Privy signs; this server never holds the key.
+
+1. Create the wallet with your Privy app credentials (server-only; never commit the secret):
+
+   ```sh
+   PRIVY_APP_ID=… PRIVY_APP_SECRET=… node dist/cli.js privy-wallet
+   ```
+
+   It prints `PRIPO_MCP_PRIVY_WALLET_ID` and `PRIPO_MCP_OPERATOR_ADDRESS`.
+2. On the Pripo **Operator keys** page, create a key and paste that address into **Operator address**. This sets the onchain limits (expiry, position size, daily loss, leverage, markets) exactly as for a generated key.
+3. Send the address a little native gas, then run with `--broadcast` and `PRIPO_MCP_OWNER`, `PRIPO_MCP_OPERATOR_ADDRESS`, `PRIPO_MCP_PRIVY_WALLET_ID`, `PRIVY_APP_ID`, `PRIVY_APP_SECRET` set. Do not also set `PRIPO_MCP_OPERATOR_PRIVATE_KEY`.
+
+Each transaction goes to Privy's `eth_signTransaction`. Before anything is journaled or broadcast, the server checks that the returned transaction recovers to the configured address and matches every requested field. The vault's onchain operator limits remain the enforcement; revoking the key on the Operator keys page stops the wallet regardless of Privy.
+
 ## Validate
 
 ```sh
